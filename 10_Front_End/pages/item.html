@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="../css/style.css">
+<div class="sidebar"><h2>SmartPOS</h2><a href="../index.html">Dashboard</a><a href="customer.html">Customers</a><a href="item.html" class="active">Items</a><a href="place_order.html">Place Order</a></div>
+<main class="content">
+    <h1>Inventory</h1>
+    <div class="card">
+        <input id="iId" placeholder="Item ID">
+        <input id="iName" placeholder="Item Name">
+        <input id="iPrice" type="number" placeholder="Price">
+        <input id="iQty" type="number" placeholder="Qty">
+        <button class="btn btn-primary" onclick="saveItem()">Save Item</button>
+    </div>
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>Item ID</th> <th>Item</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+            </thead>
+            <tbody id="itemTable"></tbody>
+        </table>
+    </div>
+</main>
+<script src="../js/app.js"></script>

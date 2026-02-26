@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../css/style.css">
+<div class="sidebar"><h2>SmartPOS</h2><a href="../index.html">Dashboard</a><a href="customer.html">Customers</a><a href="item.html">Items</a><a href="place_order.html" class="active">Place Order</a></div>
+<main class="content">
+  <h1>New Order</h1>
+  <div style="display: flex; gap: 2rem;">
+    <div style="flex: 2;">
+      <div class="card">
+        <input id="orderId" placeholder="Order ID" style="margin-bottom: 10px; width: 100%;">
+
+        <select id="custSelect"><option>Select Customer</option></select>
+        <select id="itemSelect"><option>Select Item</option></select>
+        <input id="buyQty" type="number" placeholder="Quantity">
+        <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="card">
+        <table>
+          <thead>
+          <tr>
+            <th>Item ID</th> <th>Item</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+          </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <div class="card">
+        <h3>Total</h3>
+        <h2 id="gTotal">$0.00</h2>
+        <button class="btn btn-success" onclick="checkOut()">Check Out</button>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="../js/app.js"></script>

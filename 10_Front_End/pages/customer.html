@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="../css/style.css">
+<div class="sidebar"><h2>SmartPOS</h2><a href="../index.html">Dashboard</a><a href="customer.html" class="active">Customers</a><a href="item.html">Items</a><a href="place_order.html">Place Order</a></div>
+<main class="content">
+    <h1>Customers</h1>
+    <div class="card">
+        <input id="cId" placeholder="Customer ID">
+        <input id="cName" placeholder="Name">
+        <input id="cTel" placeholder="Phone">
+        <button class="btn btn-primary" onclick="saveCustomer()">Save</button>
+    </div>
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th> <th>Name</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody id="custTable"></tbody>
+        </table>
+    </div>
+</main>
+<script src="../js/app.js"></script>

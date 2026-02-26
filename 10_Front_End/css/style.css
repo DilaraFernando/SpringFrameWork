@@ -1,0 +1,66 @@
+:root {
+    --primary: #6366f1;
+    --success: #22c55e;
+    --sidebar-bg: #0f172a;
+    --text-main: #1e293b;
+    --bg-light: #f8fafc;
+}
+
+* { box-sizing: border-box; margin: 0; font-family: 'Inter', sans-serif; }
+body { display: flex; background: var(--bg-light); color: var(--text-main); min-height: 100vh; }
+
+/* Navigation */
+.sidebar { width: 260px; background: var(--sidebar-bg); color: white; padding: 2rem; position: fixed; height: 100vh; }
+.sidebar h2 { color: var(--primary); margin-bottom: 2rem; }
+.sidebar a { display: block; color: #94a3b8; text-decoration: none; padding: 12px; border-radius: 8px; margin-bottom: 8px; }
+.sidebar a:hover, .sidebar a.active { background: rgba(255,255,255,0.1); color: white; }
+
+/* Main Content */
+.content { margin-left: 260px; padding: 3rem; width: 100%; }
+.card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+
+/* Elements */
+input, select { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem; }
+.btn { padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-success { background: var(--success); color: white; width: 100%; }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 12px; background: #f1f5f9; font-size: 0.8rem; text-transform: uppercase; }
+td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
+
+/* Dashboard Specifics */
+.stat-card {
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card .label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: var(--sidebar-bg);
+}
+
+.trend {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #f1f5f9;
+}
+
+.btn-edit { background: #f1c40f; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-right: 5px; }
+.btn-delete { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+.btn-edit:hover { background: #d4ac0d; }
+.btn-delete:hover { background: #c0392b; }
+
+.trend.up { color: var(--success); background: rgba(34, 197, 94, 0.1); }
+
+.logo span { color: var(--primary); }

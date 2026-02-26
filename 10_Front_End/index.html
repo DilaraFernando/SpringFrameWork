@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartPOS - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo">⚡ Smart<span>POS</span></div>
+    <nav>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="pages/customer.html">Customers</a>
+        <a href="pages/item.html">Inventory</a>
+        <a href="pages/place_order.html">New Order</a>
+    </nav>
+</div>
+
+<main class="content">
+    <header style="margin-bottom: 2rem;">
+        <h1>Analytics Overview</h1>
+        <p style="color: var(--sidebar-bg); opacity: 0.6;">Real-time performance of your store.</p>
+    </header>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="card stat-card">
+            <span class="label">Total Revenue</span>
+            <h2 id="dashTotalRevenue">$0.00</h2>
+            <span class="trend up">↑ 12.5%</span>
+        </div>
+        <div class="card stat-card">
+            <span class="label">Inventory Items</span>
+            <h2 id="dashTotalItems">0</h2>
+            <span class="trend">Live Count</span>
+        </div>
+        <div class="card stat-card">
+            <span class="label">Customers</span>
+            <h2 id="dashTotalCust">0</h2>
+            <span class="trend">Registered</span>
+        </div>
+        <div class="card stat-card">
+            <span class="label">Low Stock Alerts</span>
+            <h2 id="dashLowStock" style="color: var(--danger);">0</h2>
+            <span class="trend">Needs Attention</span>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        <div class="card">
+            <h3>Latest Inventory Added</h3>
+            <table style="margin-top: 1rem;">
+                <thead>
+                <tr><th>Item</th><th>Price</th><th>Status</th></tr>
+                </thead>
+                <tbody id="dashItemPreview">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card" style="background: var(--sidebar-bg); color: white;">
+            <h3>Quick Actions</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem;">
+                <button class="btn btn-primary" onclick="location.href='place-order.html'">+ New Sale</button>
+                <button class="btn" style="background: rgba(255,255,255,0.1); color: white;" onclick="location.href='item.html'">Add Stock</button>
+                <button class="btn" style="background: var(--danger); color: white;" onclick="clearAllData()">Reset System</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

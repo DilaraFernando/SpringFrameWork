@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - NextGen</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8f9fc 0%, #f0f2f9 100%);
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .login-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08),
+      0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      color: #6b7280;
+      font-size: 1.05rem;
+    }
+
+    .input-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+      font-size: 1.1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #111827;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+    }
+
+    .forgot-pass {
+      display: block;
+      text-align: right;
+      margin-top: -15px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #8b5cf6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .forgot-pass:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .login-btn {
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+      color: white;
+      margin: 10px 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    }
+
+    .social-login {
+      text-align: center;
+      margin: 24px 0;
+    }
+
+    .social-login p {
+      color: #6b7280;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background: #e5e7eb;
+      transform: translateY(-3px);
+    }
+
+    .google { color: #ef4444; }
+    .facebook { color: #3b82f6; }
+    .apple { color: #111827; }
+
+    .footer {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+
+    .footer a {
+      color: #8b5cf6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        padding: 40px 28px;
+      }
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="login-card">
+    <div class="header">
+      <h1>Login</h1>
+      <p>Welcome back! Please enter your details</p>
+    </div>
+
+    <form>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="dilara@example.com" required/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="••••••••" required/>
+        </div>
+      </div>
+
+      <a href="#" class="forgot-pass">Forgot Password?</a>
+
+      <button type="submit" class="btn login-btn">
+        Login <i class="fas fa-sign-in-alt"></i>
+      </button>
+    </form>
+
+    <div class="social-login">
+      <p>or login with</p>
+      <div class="social-icons">
+        <a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+        <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-btn apple"><i class="fab fa-apple"></i></a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Don't have an account? <a href="#">Create Account</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
